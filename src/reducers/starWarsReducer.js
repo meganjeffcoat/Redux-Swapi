@@ -2,7 +2,7 @@ import {
   FETCH_CHARACTERS,
   FETCH_CHARACTERS_SUCCESS,
   FETCH_CHARACTERS_FAILURE
-} from "../actions";
+} from '../actions';
 
 
 const initialState = {
@@ -13,9 +13,15 @@ const initialState = {
 export const charsReducer = (state = initialState, action) => {
   switch (action.type) {
     case FETCH_CHARACTERS:
-      return { ...state, fetching: true };
+      return { 
+        ...state, 
+        fetching: true 
+      };
     case FETCH_CHARACTERS_FAILURE:
-      return { ...state, fetching: false, error: action.payload };
+      return { ...state, 
+        fetching: false, 
+        error: action.payload 
+      };
     case FETCH_CHARACTERS_SUCCESS:
       console.log(action.payload);
       return {
